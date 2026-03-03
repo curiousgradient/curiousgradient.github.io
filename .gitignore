@@ -40,6 +40,14 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Internal instructions, todos, and notes (kept locally, not for public repo)
+DEPLOYMENT.md
+PROJECT_SUMMARY.md
+QUICKSTART.md
+URLS_TO_UPDATE.md
+public/RESUME_README.md
+public/images/README.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
