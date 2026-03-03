@@ -39,7 +39,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased flex flex-col min-h-screen">
         <Navigation />
-        <main className="flex-grow">
+        <main className="flex-grow main-transition">
           {children}
         </main>
         <Footer />
