@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import ProjectCard from '@/components/ProjectCard';
+import { assetPath } from '@/lib/basePath';
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
             <div className="flex-shrink-0">
               <div className="w-48 h-48 md:w-64 md:h-64 relative rounded-full overflow-hidden ring-4 ring-blue-500 dark:ring-blue-400 shadow-xl">
                 <Image
-                  src="/images/profile.png"
+                  src={assetPath('/images/profile.png')}
                   alt="Rohit Ramaprasad"
                   fill
                   className="object-cover"
@@ -48,7 +49,7 @@ export default function Home() {
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                 <a
-                  href="/resume.pdf"
+                  href={assetPath('/resume.pdf')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -94,7 +95,7 @@ export default function Home() {
             <ProjectCard
               title="Teaching Gemma to Think"
               description="Google Tunix Hackathon: Attempted to teach Gemma3-1B structured reasoning across creative writing, math, and science using a two-stage SFT + GRPO pipeline. Built a custom 2,282-sample distilled dataset from Gemini-2.5-Pro and trained on Kaggle's constrained TPU."
-              thumbnail="/images/projects/teaching_gemma_to_think.png"
+              thumbnail={assetPath('/images/projects/teaching_gemma_to_think.png')}
               tags={["LLMs", "SFT", "GRPO", "Reasoning", "Gemma", "Google Hackathon"]}
               isExternal={true}
               link="https://github.com/curiousgradient/teaching-gemma-to-think"
@@ -103,7 +104,7 @@ export default function Home() {
             <ProjectCard
               title="Key Actor Detection in Multi-Person Sports Videos"
               description="Research project published at CVsports Workshop, CVPR'22. Developed a convolutional recurrent neural network with attention mechanism to identify key players in hockey penalty videos without explicit annotations."
-              thumbnail="/images/projects/hockey_penalty_det.png"
+              thumbnail={assetPath('/images/projects/hockey_penalty_det.png')}
               tags={["Computer Vision", "Deep Learning", "LSTM", "PyTorch", "CVPR"]}
               isExternal={true}
               link="https://github.com/fay-askari72/Interaction-Classification-with-Key-Actor-Detection-in-Videos"
@@ -112,7 +113,7 @@ export default function Home() {
             <ProjectCard
               title="AI-Enabled Object Detection in UAVs"
               description="Research paper published in IEEE Networks. Developed an optimized deep learning architecture using ResNeSt backbone for aerial object detection, offloading computationally intensive tasks from power-constrained drones to GPU edge servers."
-              thumbnail="/images/projects/aerial_object_det.png"
+              thumbnail={assetPath('/images/projects/aerial_object_det.png')}
               tags={["Computer Vision", "Object Detection", "UAVs", "Deep Learning", "IEEE"]}
               isExternal={true}
               link="https://github.com/ayushjain1144/Aerial-Object-Detection"
