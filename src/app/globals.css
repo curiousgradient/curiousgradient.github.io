@@ -81,3 +81,36 @@ body {
 .prose li {
   margin: 0.5rem 0;
 }
+
+/* View Transitions API - smooth page change animations */
+@supports (view-transition-name: none) {
+  .main-transition {
+    view-transition-name: main-content;
+  }
+
+  ::view-transition-old(main-content) {
+    animation: fade-out 0.2s ease-out forwards;
+  }
+
+  ::view-transition-new(main-content) {
+    animation: fade-in 0.25s ease-out 0.05s both;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

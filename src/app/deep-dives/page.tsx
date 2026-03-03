@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import ViewTransitionLink from '@/components/ViewTransitionLink';
 import { getDeepDives } from '@/lib/markdown';
 
 export default function DeepDivesPage() {
@@ -58,12 +58,12 @@ export default function DeepDivesPage() {
                       </span>
                     </a>
                   ) : (
-                    <Link
+                    <ViewTransitionLink
                       href={`/deep-dives/${dive.slug}`}
                       className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                     >
                       {dive.title}
-                    </Link>
+                    </ViewTransitionLink>
                   )}
                 </h2>
 
@@ -97,7 +97,7 @@ export default function DeepDivesPage() {
                     </svg>
                   </a>
                 ) : (
-                  <Link
+                  <ViewTransitionLink
                     href={`/deep-dives/${dive.slug}`}
                     className="text-blue-600 dark:text-blue-400 font-medium hover:underline inline-flex items-center"
                   >
@@ -105,7 +105,7 @@ export default function DeepDivesPage() {
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </Link>
+                  </ViewTransitionLink>
                 )}
               </article>
             ))}

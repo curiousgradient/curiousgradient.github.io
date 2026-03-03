@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
+import ViewTransitionLink from '@/components/ViewTransitionLink';
 import { getDeepDiveBySlug, getDeepDives } from '@/lib/markdown';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
 
@@ -26,7 +26,7 @@ export default async function DeepDivePage({ params }: PageProps) {
     <div className="min-h-screen bg-white dark:bg-gray-900 py-12">
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back button */}
-        <Link
+        <ViewTransitionLink
           href="/deep-dives"
           className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline mb-8"
         >
@@ -34,7 +34,7 @@ export default async function DeepDivePage({ params }: PageProps) {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
           Back to Deep Dives
-        </Link>
+        </ViewTransitionLink>
 
         {/* Post header */}
         <header className="mb-8">
@@ -74,7 +74,7 @@ export default async function DeepDivePage({ params }: PageProps) {
 
         {/* Footer */}
         <footer className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-          <Link
+          <ViewTransitionLink
             href="/deep-dives"
             className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline"
           >
@@ -82,7 +82,7 @@ export default async function DeepDivePage({ params }: PageProps) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
             Back to Deep Dives
-          </Link>
+          </ViewTransitionLink>
         </footer>
       </article>
     </div>
