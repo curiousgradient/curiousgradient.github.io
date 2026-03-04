@@ -2,6 +2,7 @@ import Image from 'next/image';
 import ProjectCard from '@/components/ProjectCard';
 import FadeInSection from '@/components/FadeInSection';
 import LogoStrip from '@/components/LogoStrip';
+import TrackedExternalLink from '@/components/TrackedExternalLink';
 import { assetPath } from '@/lib/basePath';
 
 export default function Home() {
@@ -9,9 +10,9 @@ export default function Home() {
     <div className="min-h-screen dot-grid">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 py-20 gradient-mesh overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
           <FadeInSection>
-          <div className="flex flex-col md:flex-row items-center gap-12">
+          <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-10">
             {/* Profile Image + Logos */}
             <div className="flex-shrink-0 flex flex-col items-center gap-6">
               <div className="w-48 h-48 md:w-64 md:h-64 relative rounded-full overflow-hidden ring-4 ring-blue-500 dark:ring-blue-400 shadow-xl">
@@ -27,7 +28,7 @@ export default function Home() {
             </div>
 
             {/* Bio */}
-            <div className="flex-1 text-center md:text-left">
+            <div className="flex-1 min-w-0 text-center md:text-left">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                 Hi, I'm Rohit
               </h1>
@@ -51,14 +52,16 @@ export default function Home() {
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                <a
+                <TrackedExternalLink
                   href={assetPath('/resume.pdf')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all"
+                  eventCategory="engagement"
+                  eventLabel="resume_home"
                 >
                   View Resume
-                </a>
+                </TrackedExternalLink>
                 <a
                   href="https://github.com/curiousgradient"
                   target="_blank"
@@ -99,6 +102,100 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Service & Leadership */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-800/80">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeInSection>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-10 text-center">
+              Service & Leadership
+            </h2>
+          </FadeInSection>
+
+          <div className="space-y-12">
+            {/* Academic Service */}
+            <FadeInSection delay={0}>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 pb-2 border-b border-blue-200 dark:border-blue-800">
+                  Academic Service
+                </h3>
+                <div className="space-y-3">
+                  <div>
+                    <p className="font-medium text-gray-800 dark:text-gray-200">
+                      Program Committee / Reviewer (Upcoming), CVsports Workshop, IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) | 2026
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                      Selected to evaluate state-of-the-art research at the intersection of computer vision and sports analytics.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </FadeInSection>
+
+            {/* Teaching & Mentorship */}
+            <FadeInSection delay={100}>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 pb-2 border-b border-blue-200 dark:border-blue-800">
+                  Teaching & Mentorship
+                </h3>
+                <div className="space-y-3">
+                  <div>
+                    <p className="font-medium text-gray-800 dark:text-gray-200">
+                      Graduate Teaching Assistant, Scalable Data Systems, UC San Diego | 2023
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                      Designed and implemented distributed parallel computing assignments using Dask and PySpark on AWS EC2 for graduate-level data science students. Provided 1:1 technical guidance.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </FadeInSection>
+
+            {/* Fellowships & Technical Honors */}
+            <FadeInSection delay={200}>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 pb-2 border-b border-blue-200 dark:border-blue-800">
+                  Fellowships & Technical Honors
+                </h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="font-medium text-gray-800 dark:text-gray-200">
+                      Adobe-wide Hackathon Honorable Mention | 2024
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                      Recognized for developing an innovative approach to handling attributions involving creative computation on tabular data.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-800 dark:text-gray-200">
+                      Mitacs Globalink Research Fellow, McGill University | 2021
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                      Awarded a distinguished, fully funded international fellowship to conduct deep learning research in Montreal, Canada.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-800 dark:text-gray-200">
+                      National Winner, IBM Hack Challenge | 2019
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                      Awarded first prize nationally for developing a web application that calculates user friend affinity through digital footprints.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-800 dark:text-gray-200">
+                      KVPY Fellow, Government of India | 2018
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                      Awarded a prestigious national fellowship for aptitude in scientific research (Ranked 403rd nationally).
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </FadeInSection>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Projects Section */}
       <section className="py-16 bg-white dark:bg-gray-800">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,7 +209,7 @@ export default function Home() {
             <FadeInSection delay={0}>
             <ProjectCard
               title="Teaching Gemma to Think"
-              description="Google Tunix Hackathon: Attempted to teach Gemma3-1B structured reasoning across creative writing, math, and science using a two-stage SFT + GRPO pipeline. Built a custom 2,282-sample distilled dataset from Gemini-2.5-Pro and trained on Kaggle's constrained TPU."
+              description="Google Tunix Hackathon: Attempted to teach Gemma3-1B structured reasoning across creative writing, math, and science using a two-stage SFT + GRPO pipeline. Built a custom 2,282-sample distilled dataset from Gemini-2.5-Pro and trained on Kaggle's constrained TPUs."
               thumbnail={assetPath('/images/projects/teaching_gemma_to_think.png')}
               tags={["LLMs", "SFT", "GRPO", "Reasoning", "Gemma", "Google Hackathon"]}
               isExternal={true}

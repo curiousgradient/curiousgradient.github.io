@@ -26,9 +26,26 @@
 }
 
 body {
-  background: var(--background);
+  background:
+    /* Soft gradient orbs - top right */
+    radial-gradient(ellipse 70% 50% at 90% 5%, rgba(59, 130, 246, 0.06) 0%, transparent 55%),
+    /* Soft gradient orbs - bottom left */
+    radial-gradient(ellipse 60% 45% at 5% 95%, rgba(99, 102, 241, 0.05) 0%, transparent 55%),
+    /* Soft gradient orbs - center-right accent */
+    radial-gradient(ellipse 50% 35% at 70% 60%, rgba(147, 197, 253, 0.04) 0%, transparent 50%),
+    var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background:
+      radial-gradient(ellipse 70% 50% at 90% 5%, rgba(59, 130, 246, 0.09) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 45% at 5% 95%, rgba(99, 102, 241, 0.07) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 35% at 70% 60%, rgba(147, 197, 253, 0.05) 0%, transparent 50%),
+      var(--background);
+  }
 }
 
 /* Subtle dot grid background */
@@ -109,6 +126,27 @@ body {
 
 .prose li {
   margin: 0.5rem 0;
+}
+
+/* Focus states for keyboard navigation */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgb(59 130 246);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  a:focus-visible,
+  button:focus-visible {
+    outline-color: rgb(96 165 250);
+  }
+}
+
+/* Remove default outline when using custom focus (for elements that add their own) */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
 }
 
 /* View Transitions API - smooth page change animations */

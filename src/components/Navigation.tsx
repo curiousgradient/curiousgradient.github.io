@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import ViewTransitionLink from './ViewTransitionLink';
+import TrackedExternalLink from './TrackedExternalLink';
 import { usePathname } from 'next/navigation';
 import { assetPath } from '@/lib/basePath';
 
@@ -33,15 +34,17 @@ export default function Navigation() {
           <div className="hidden md:flex space-x-8">
             {links.map((link) => (
               link.external ? (
-                <a
+                <TrackedExternalLink
                   key={link.href}
                   href={link.href.startsWith('http') ? link.href : assetPath(link.href)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  eventCategory="navigation"
+                  eventLabel="resume_nav"
                 >
                   {link.label}
-                </a>
+                </TrackedExternalLink>
               ) : (
                 <ViewTransitionLink
                   key={link.href}
@@ -61,7 +64,7 @@ export default function Navigation() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none transition-colors duration-200"
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
             aria-expanded={isMenuOpen}
           >
             <span className="sr-only">Open main menu</span>
@@ -89,16 +92,18 @@ export default function Navigation() {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
             {links.map((link) => (
               link.external ? (
-                <a
+                <TrackedExternalLink
                   key={link.href}
                   href={link.href.startsWith('http') ? link.href : assetPath(link.href)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                  eventCategory="navigation"
+                  eventLabel="resume_nav"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </TrackedExternalLink>
               ) : (
                 <ViewTransitionLink
                   key={link.href}

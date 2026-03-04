@@ -1,4 +1,5 @@
 import ViewTransitionLink from '@/components/ViewTransitionLink';
+import TrackedExternalLink from '@/components/TrackedExternalLink';
 import { getDeepDives } from '@/lib/markdown';
 
 export default function DeepDivesPage() {
@@ -44,11 +45,13 @@ export default function DeepDivesPage() {
 
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
                   {dive.type === 'medium' && dive.link ? (
-                    <a
+                    <TrackedExternalLink
                       href={dive.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                      eventCategory="deep_dive"
+                      eventLabel={`medium_${dive.slug}`}
                     >
                       {dive.title}
                       <span className="inline-block ml-2 text-sm">
@@ -56,11 +59,13 @@ export default function DeepDivesPage() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                       </span>
-                    </a>
+                    </TrackedExternalLink>
                   ) : (
                     <ViewTransitionLink
                       href={`/deep-dives/${dive.slug}`}
                       className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                      eventCategory="deep_dive"
+                      eventLabel={dive.slug}
                     >
                       {dive.title}
                     </ViewTransitionLink>
@@ -85,21 +90,25 @@ export default function DeepDivesPage() {
                 )}
 
                 {dive.type === 'medium' && dive.link ? (
-                  <a
+                  <TrackedExternalLink
                     href={dive.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 dark:text-blue-400 font-medium hover:underline inline-flex items-center"
+                    eventCategory="deep_dive"
+                    eventLabel={`medium_${dive.slug}`}
                   >
                     Read on Medium
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
-                  </a>
+                  </TrackedExternalLink>
                 ) : (
                   <ViewTransitionLink
                     href={`/deep-dives/${dive.slug}`}
                     className="text-blue-600 dark:text-blue-400 font-medium hover:underline inline-flex items-center"
+                    eventCategory="deep_dive"
+                    eventLabel={dive.slug}
                   >
                     Read more
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
