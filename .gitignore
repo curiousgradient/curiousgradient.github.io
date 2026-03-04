@@ -49,6 +49,7 @@ public/RESUME_README.md
 public/images/README.md
 
 # Editor directories and files
+.cursor/
 .vscode/*
 !.vscode/extensions.json
 .idea
