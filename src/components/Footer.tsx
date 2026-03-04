@@ -19,7 +19,7 @@ export default function Footer() {
               href="https://github.com/curiousgradient"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors rounded-md p-1 -m-1"
               aria-label="GitHub"
             >
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -31,7 +31,7 @@ export default function Footer() {
               href="https://www.linkedin.com/in/rohit-ramaprasad/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors rounded-md p-1 -m-1"
               aria-label="LinkedIn"
             >
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -43,7 +43,7 @@ export default function Footer() {
               href="https://medium.com/@r.rohit5557"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors rounded-md p-1 -m-1"
               aria-label="Medium"
             >
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
