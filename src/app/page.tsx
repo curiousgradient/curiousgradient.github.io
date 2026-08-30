@@ -121,7 +121,7 @@ export default function Home() {
                 <div className="space-y-3">
                   <div>
                     <p className="font-medium text-gray-800 dark:text-gray-200">
-                      Program Committee / Reviewer (Upcoming), CVsports Workshop, IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) | 2026
+                      Program Committee / Reviewer, CVsports Workshop, IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) <span className="font-bold">| March 2026</span>
                     </p>
                     <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
                       Selected to evaluate state-of-the-art research at the intersection of computer vision and sports analytics.
